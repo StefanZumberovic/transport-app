@@ -2,6 +2,7 @@ import express from 'express';
 import expressLoader from './loaders/express';
 import logger from './loaders/logger';
 import errorLoader from './loaders/error';
+import keys from './config/keys';
 
 function startServer(): void {
     // Load error handling for uncaught exceptions and rejections outside of express
@@ -13,11 +14,7 @@ function startServer(): void {
     expressLoader(app);
 
     // Start the server
-    app.listen(5000, (err: Error) => {
-        if (err) {
-            logger.error(err);
-            process.exit(1);
-        }
+    app.listen(keys.port || 5000, () => {
         logger.info('Server listening on port 5000');
     });
 }
