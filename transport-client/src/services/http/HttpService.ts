@@ -13,6 +13,7 @@ const getConnections = (params: ParamsInterface) => {
   const {
     paths: { apiBaseUrl: baseUrl },
   } = config;
+
   return axios.get(`${baseUrl}/connections`, params);
 };
 
