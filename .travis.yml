@@ -1,0 +1,33 @@
+sudo: required
+services:
+    - docker
+
+before_install:
+    - docker build -t transportID/node-test -f ./transport-api/Dockerfile.dev ./transport-api
+
+script:
+    - docker run transportID/node-test npm test -- --coverage
+
+after_success:
+    - docker build -t transportID/transport-nginx ./nginx
+    - docker build -t transportID/transport-client ./transport-client
+    - docker build -t transportID/transport-api ./transport-api
+
+    - echo "$DOCKER_PASSWORD" | DOCKER LOGIN -u "$DOCKER_ID" --password-stdin
+
+    - docker push transportID/transport-nginx
+    - docker push transportID/transport-client
+    - docker push transportID/transport-api
+
+deploy:
+    provider: elasticbeanstalk
+    region: us-east-1
+    app: transport-app
+    env: Transport-env
+    bucket_name: <some S3 bucket name>
+    bucket_path: transport-api-bucket
+    on:
+        branch: master
+    access_key_id: $AWS_ACCESS_KEY
+    secret_access_key:
+        secure: $AWS_SECRET_KEY

@@ -1,0 +1,32 @@
+{
+    "AWSEBDockerrunVersion": 2,
+    "containerDefinitions": [
+        {
+            "name": "nginx",
+            "image": "transportID/transport-nginx",
+            "essential": true,
+            "portMappings": [
+                {
+                    "hostPort": 80,
+                    "containerPort": 80
+                }
+            ],
+            "links": ["transport-client", "transport-api"],
+            "memory": 128
+        },
+        {
+            "name": "transport-client",
+            "image": "transportID/transport-client",
+            "hostname": "client",
+            "essential": false,
+            "memory": 128
+        },
+        {
+            "name": "transport-api",
+            "image": "transportID/transport-api",
+            "hostname": "api",
+            "essential": false,
+            "memory": 128
+        }
+    ]
+}
