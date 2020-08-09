@@ -44,6 +44,11 @@ const Connections = () => {
      *         schema:
      *           type: number
      *         description: Number of travel solutions
+     *       - in: query
+     *         name: transportations
+     *         schema:
+     *           type: string
+     *         description: Select to get only train connections
      */
     router.get('/', errorHandlerMiddleware(getConnectionsController));
 
