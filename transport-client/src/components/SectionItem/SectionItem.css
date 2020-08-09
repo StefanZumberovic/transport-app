@@ -1,0 +1,92 @@
+.section-item {
+  width: 100%;
+  padding: 15px 8px 0 8px;
+  box-shadow: -1px 1px 4px 0 rgba(200, 200, 200, 0.6);
+  margin-bottom: 10px;
+}
+
+.section-item-main-content {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  padding-bottom: 15px;
+}
+
+.section-icon {
+  width: 15%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.section-main-info {
+  width: 70%;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.section-name {
+  width: 100%;
+  font-size: 13px;
+  margin-bottom: 5px;
+}
+
+.section-name span {
+  color: rgb(240, 161, 34);
+}
+
+.additional-information {
+  width: 100%;
+  font-size: 12px;
+  font-weight: 200;
+  color: rgb(150, 150, 150);
+  display: flex;
+  justify-content: space-between;
+}
+
+.expand-button {
+  width: 15%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+
+.expand-button:focus {
+  outline: none;
+}
+
+.passing-stations-list {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 300ms;
+}
+
+.open-stations-list {
+  max-height: 450px;
+  transition: max-height 300ms;
+  padding-bottom: 15px;
+}
+
+.passing-station {
+  display: flex;
+  width: 100%;
+  padding: 8px 0;
+}
+
+.passing-station:nth-child(odd) {
+  background: rgb(213, 235, 237);
+}
+
+.passing-station .passing-arrival {
+  font-size: 12px;
+  width: 15%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.passing-station .passing-station-name {
+  font-size: 13px;
+  width: 80%;
+}

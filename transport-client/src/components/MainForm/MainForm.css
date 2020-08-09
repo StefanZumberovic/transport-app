@@ -1,0 +1,30 @@
+.main-form:focus {
+  outline: none;
+}
+
+.main-form .input-fields {
+  margin-top: 15px;
+}
+
+.main-form label {
+  font-size: 12px;
+  font-weight: 200;
+  color: rgb(150, 150, 150);
+}
+
+.main-form input {
+  width: 100%;
+  border-bottom: 2px solid rgb(13, 181, 161);
+  font-size: 14px;
+  padding: 7px 7px 5px 0;
+}
+
+.main-form input:focus {
+  outline: none;
+}
+
+.main-form .form-error {
+  font-size: 14px;
+  color: rgb(255, 0, 0);
+  margin-top: 10px;
+}

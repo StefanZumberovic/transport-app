@@ -1,0 +1,9 @@
+.general-information {
+  display: flex;
+  font-size: 12px;
+  font-weight: 200;
+  color: rgb(150, 150, 150);
+  width: 100%;
+  justify-content: space-between;
+  padding: 20px 0;
+}

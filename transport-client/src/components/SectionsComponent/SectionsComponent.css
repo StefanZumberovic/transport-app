@@ -1,0 +1,17 @@
+.sections-component {
+  width: 100%;
+}
+
+.sections-signature {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 30px;
+}
+
+.sections-signature span {
+  font-size: 14px;
+  color: rgb(150, 150, 150);
+  padding-left: 10px;
+}

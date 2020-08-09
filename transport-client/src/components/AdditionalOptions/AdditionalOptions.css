@@ -1,0 +1,20 @@
+.additional-options {
+  font-size: 12px;
+  padding: 5px;
+  border: 1px solid rgb(200, 200, 200);
+  border-radius: 1px;
+  cursor: pointer;
+  display: inline-block;
+  margin-top: 10px;
+  background: rgb(255, 255, 255);
+}
+
+.additional-options:hover {
+  background: rgba(0, 0, 255, 0.1);
+  box-shadow: 1px 1px 1px 0 rgba(0, 0, 255, 0.1);
+}
+
+.selected-option,
+.selected-option:focus {
+  background: rgb(13, 181, 161);
+}
