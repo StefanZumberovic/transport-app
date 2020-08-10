@@ -24,7 +24,7 @@ server on localhost:5000.<br />
 
 To test the endpoint with Swagger UI, simply go to localhost:5000/api-docs.<br />
 
-To run the backend test runner, in the transport-api folder run 'npm run test'. This will run test for the backend.<br />
+To run the backend test runner, in the transport-api folder run 'npm run test'. This will run tests for the backend.<br />
 
 #### Running in macOS or Linux
 
