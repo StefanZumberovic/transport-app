@@ -3,10 +3,10 @@ import React, { useState, useEffect } from 'react';
 import './MainForm.css';
 
 interface MainFormProps {
-  setSubmitForm: (...args: any) => void;
+  submitForm: (...args: any) => void;
 }
 
-const MainForm: React.FC<MainFormProps> = ({ setSubmitForm }) => {
+const MainForm: React.FC<MainFormProps> = ({ submitForm }) => {
   const [from, setFrom] = useState<string>('');
   const [to, setTo] = useState<string>('');
   const [formError, setFormError] = useState<boolean>(false);
@@ -34,7 +34,7 @@ const MainForm: React.FC<MainFormProps> = ({ setSubmitForm }) => {
     return false;
   };
 
-  const submitForm = async (e: KeyboardEvent) => {
+  const submit = async (e: KeyboardEvent) => {
     if (e.keyCode !== 13) {
       return;
     }
@@ -42,13 +42,13 @@ const MainForm: React.FC<MainFormProps> = ({ setSubmitForm }) => {
       setFormError(true);
       return;
     }
-    setSubmitForm({ from, to });
+    submitForm({ from, to });
   };
 
   useEffect(() => {
-    window.addEventListener('keydown', submitForm);
+    window.addEventListener('keydown', submit);
     return () => {
-      window.removeEventListener('keydown', submitForm);
+      window.removeEventListener('keydown', submit);
     };
   });
 
