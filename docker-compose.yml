@@ -31,3 +31,11 @@ services:
         expose:
             - '3000'
         stdin_open: true
+    test:
+        build:
+            dockerfile: Dockerfile.dev
+            context: ./transport-api
+        volumes: 
+            - /app/node_modules
+            - ./transport-api:/app
+        command: ["npm", "run", "test"]
