@@ -21,7 +21,7 @@
   "scripts": {
     "start": "react-scripts start",
     "start:windows": "set REACT_APP_HOST=true&& npm start",
-    "start:unix": "REACT_APP_HOST=true npm start",
+    "start:unix": "export REACT_APP_HOST=true&& npm start",
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
